@@ -11,18 +11,24 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { InputTextModule } from 'primeng/inputtext';
 import { JwtModule } from "@auth0/angular-jwt";
 import { LoginComponent } from './login/login.component';
+import { MenubarModule } from 'primeng/menubar';
 import { NgModule } from '@angular/core';
 import { PanelModule } from 'primeng/panel';
 import { RouterModule } from '@angular/router';
+import { StoreItemComponent } from './store-item/store-item.component';
+import { TableModule } from 'primeng/table';
+import { VendorComponent } from './vendor/vendor.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
 
 @NgModule({
-  declarations: [		  
+  declarations: [				  
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    StoreItemComponent,
+      VendorComponent
    ],
   imports: [
     BrowserModule,
@@ -42,8 +48,12 @@ export function tokenGetter() {
     InputTextModule,
     ButtonModule,
     DialogModule,
+    MenubarModule,
+    TableModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
+      { path: 'store', component: StoreItemComponent },
+      { path: 'vendor', component: VendorComponent },
     ])
   ],
   providers: [
