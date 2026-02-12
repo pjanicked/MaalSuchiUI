@@ -1,4 +1,3 @@
-import { Dialog, DialogModule } from 'primeng/dialog';
 import { GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
@@ -7,8 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { FormsModule } from '@angular/forms';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 import { JwtModule } from "@auth0/angular-jwt";
 import { LoginComponent } from './login/login.component';
 import { MenubarModule } from 'primeng/menubar';
@@ -17,6 +20,7 @@ import { PanelModule } from 'primeng/panel';
 import { RouterModule } from '@angular/router';
 import { StoreItemComponent } from './store-item/store-item.component';
 import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 import { VendorComponent } from './vendor/vendor.component';
 
 export function tokenGetter() {
@@ -28,7 +32,7 @@ export function tokenGetter() {
     AppComponent,
     LoginComponent,
     StoreItemComponent,
-      VendorComponent
+    VendorComponent
    ],
   imports: [
     BrowserModule,
@@ -45,11 +49,15 @@ export function tokenGetter() {
     AppRoutingModule,
     SocialLoginModule,
     PanelModule,
+    InputNumberModule,
     InputTextModule,
+    InputTextareaModule,
     ButtonModule,
     DialogModule,
     MenubarModule,
     TableModule,
+    ToolbarModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'store', component: StoreItemComponent },

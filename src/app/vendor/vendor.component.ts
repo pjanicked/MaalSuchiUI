@@ -21,7 +21,7 @@ export class VendorComponent implements OnInit {
     this.cols = [
       { field: "name", header: "Name" },
       { field: "address", header: "Address" },
-      { field: "contact", header: "COntact" }
+      { field: "contact", header: "Contact" }
   ];
   }
 
